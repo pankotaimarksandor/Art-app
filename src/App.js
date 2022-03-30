@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ArtworkDetails from './components/ArtworkDetails'
+import ArtworkList from './components/ArtworkList'
+import FavoriteArtworks from './components/FavoriteArtworks'
+import Header from './components/Header'
+import PageNotFound from './components/PageNotFound'
+import './scss/styles.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className='app'>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route index exact element={ <ArtworkList /> }/>
+                    <Route path='/favorites' element={ <FavoriteArtworks /> }/>
+                    <Route path='/arts/:id' element={ <ArtworkDetails /> }/>
+                    <Route path='*' element={ <PageNotFound /> }/>
+                </Routes>
+            </Router>
+        </div>
+    )
 }
 
-export default App;
+export default App
