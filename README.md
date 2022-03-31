@@ -14,7 +14,7 @@
 
 ## Installation
 
-Install the dependencies and start the server.
+Install the dependencies and start the server
 
 ```sh
 npm i
@@ -22,3 +22,7 @@ npm start
 ```
 
 Server will run on http://localhost:3000
+
+## Screenshots
+
+You can find screenshots of the app in the 'screenshots' folder
