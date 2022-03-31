@@ -1,0 +1,27 @@
+@import '../scss/styles.scss';
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px;
+}
+
+.page-item {
+    transition: 0.3s;
+    &.active {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.page-link {
+    cursor: pointer;
+    padding: 15px;
+
+    
+}
+

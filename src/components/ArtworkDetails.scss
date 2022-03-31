@@ -1,5 +1,18 @@
 @import '../scss/styles.scss';
 
 .artworkdetails {
-    
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px;
+    font-weight: 400;
+
+    .section-right {
+        margin-left: 30px;
+
+        img {
+            max-height: 500px;
+            max-width: 500px;
+            object-fit: cover;
+        }
+    }
 }
