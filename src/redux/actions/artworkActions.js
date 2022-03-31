@@ -44,6 +44,8 @@ export const fetchSelectedArtworkAction = (id) => async (dispatch) => {
             type: actionTypes.FETCH_SELECTED_ARTWORK,
             payload: artworkDetails
         })
+    } else {
+        console.log('Failed to fetch')
     }
 }
 

@@ -39,7 +39,7 @@ const ArtworkDetails = () => {
                                 <span>{artworkDetails.title}</span>
                             </div>
                             <div>
-                                <span>Department:</span><br/>
+                                <span>Department:</span>
                                 <span>{artworkDetails.department}</span>
                             </div>
                         </div>

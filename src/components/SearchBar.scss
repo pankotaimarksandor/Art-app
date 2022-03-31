@@ -1,0 +1,25 @@
+@import '../scss/styles.scss';
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+
+    input {
+        outline: none;
+        border: none;
+        height: 25px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .search-button {
+        line-height: 25px;
+        margin-left: 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: $font-secondary;
+        }
+    }
+}

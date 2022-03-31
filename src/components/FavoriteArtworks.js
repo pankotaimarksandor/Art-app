@@ -9,7 +9,7 @@ const FavoriteArtworks = () => {
     return (
         <div className='favoriteartworks'>
             <div className='artwork-list'>
-                { favoriteCards.length < 1 && <h2>Loading</h2> }
+                { favoriteCards.length < 1 && <h2>No favorites added yet!</h2> }
                 { favoriteCards.length > 0 && (
                     favoriteCards.map((fav) => (
                         <ArtworkCard key={fav.id} data={fav}/>

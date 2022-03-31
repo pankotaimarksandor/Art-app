@@ -7,8 +7,8 @@ const Header = () => {
         <div className='header'>
             <div className='header-title'>Art Institute of Chicago</div>
             <div className='links'>
-                <NavLink to='/'>All artworks</NavLink>
-                <NavLink to='/favorites'>Favorite artworks</NavLink>
+                <NavLink to='/'>Artworks</NavLink>
+                <NavLink to='/favorites'>Favorites</NavLink>
             </div>
         </div>
     )

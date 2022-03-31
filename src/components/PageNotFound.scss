@@ -1,5 +1,13 @@
 @import '../scss/styles.scss';
 
 .pagenotfound {
-    
+    padding: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+    .message {
+        font-size: 3rem;
+    }
 }

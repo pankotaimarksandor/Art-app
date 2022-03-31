@@ -6,13 +6,26 @@
     padding: 40px 40px;
     font-weight: 400;
 
+    .section-left {
+        .artwork-info > div span:first-child {
+            padding: 10px 0px;
+            color: $font-primary;
+            font-weight: 600;
+            width: 100px;
+            display: inline-block;
+          }
+          
+          .artwork-info > div span {
+            color: $font-secondary;
+          }
+    }
+
     .section-right {
         margin-left: 30px;
 
         img {
-            max-height: 500px;
-            max-width: 500px;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
         }
     }
 }

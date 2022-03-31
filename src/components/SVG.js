@@ -1,5 +1,5 @@
 const icons = {
-    STAR_ICON: {
+    HEART_ICON: {
         content: (
             <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -8,10 +8,10 @@ const icons = {
                 strokeLinecap='round'
                 strokeLinejoin='round'
                 strokeWidth='2'
-                className='feather feather-star'
+                className='feather feather-heart'
                 viewBox='0 0 24 24'
             >
-                <path d='M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z'></path>
+                <path d='M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z'></path>
             </svg>
         )
     },
