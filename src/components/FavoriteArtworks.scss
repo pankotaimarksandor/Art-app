@@ -1,6 +1,8 @@
 @import '../scss/styles.scss';
 
 .favoriteartworks {
+    padding: 40px;
+    
     .artwork-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

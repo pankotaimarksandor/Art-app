@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import noImage from '../images/noImage.jpg'
 import { addFavoriteAction, removeFavoriteAction } from '../redux/actions/favoriteActions'
+import LazyLoad from 'react-lazyload'
+import SVG from './SVG'
 import './ArtworkCard.scss'
 
 const ArtworkCard = (props) => {
@@ -11,17 +13,13 @@ const ArtworkCard = (props) => {
     const favorite = useSelector((state) => state.favoriteReducer.favoriteIds.some(id => id === data.id))
     const [isFavorite, setIsFavorite] = useState(false)
 
-    useEffect(() => {
-        setIsFavorite(favorite)
-    }, [favorite, data])
-
     const handleImageSrcOnError = (e) => {
         e.target.src = noImage
     }
 
     const handleFavoriteClick = (id) => {
         setIsFavorite(prev => !prev)
-        if(!isFavorite) {
+        if(!favorite) {
             dispatch(addFavoriteAction(id, data))
         } else {
             dispatch(removeFavoriteAction(id))
@@ -33,16 +31,22 @@ const ArtworkCard = (props) => {
             <div className="card-inner">
                 <div className="card-top">
                     <Link to={`/arts/${data.id}`}>
-                        <img src={data.thumb} alt={data.title} onError={handleImageSrcOnError}/>
+                        <LazyLoad height={500}>
+                            <img src={data.thumb} alt={data.title} onError={handleImageSrcOnError}/>
+                        </LazyLoad>
                     </Link>
                 </div>
                 <div className="card-bottom">
                     <div className="card-info">
-                        <h3>{data.title}</h3>
+                        <h4>{data.title}</h4>
                     </div>
-                    <button onClick={() => handleFavoriteClick(data.id)}>
-                        {!isFavorite ? 'Add favorite' : 'Remove favorite'}
-                    </button>
+                    <div className='favorite-icon' onClick={() => handleFavoriteClick(data.id)}>
+                        {!favorite ? 'Add favorite' : 'Remove favorite'}
+                        <SVG
+                            name='STAR_ICON' 
+                            className={favorite ? 'svg-icon favorite' : 'svg-icon'}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

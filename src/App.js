@@ -12,14 +12,12 @@ const App = () => {
         <div className='app'>
             <Router>
                 <Header />
-                <div className='container'>
-                    <Routes>
-                        <Route index exact element={ <ArtworkList /> }/>
-                        <Route path='/favorites' element={ <FavoriteArtworks /> }/>
-                        <Route path='/arts/:id' element={ <ArtworkDetails /> }/>
-                        <Route path='*' element={ <PageNotFound /> }/>
-                    </Routes>
-                </div>
+                <Routes>
+                    <Route index exact element={ <ArtworkList /> }/>
+                    <Route path='/favorites' element={ <FavoriteArtworks /> }/>
+                    <Route path='/arts/:id' element={ <ArtworkDetails /> }/>
+                    <Route path='*' element={ <PageNotFound /> }/>
+                </Routes>
             </Router>
         </div>
     )

@@ -1,8 +1,13 @@
 @import '../scss/styles.scss';
 
 .artworklist {
-    
+    padding: 40px;
 
+    .pages-controller {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     .artwork-list {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));

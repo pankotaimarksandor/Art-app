@@ -7,7 +7,7 @@ import Pagination from './Pagination'
 
 const ArtworkList = () => {
     const [currentPage, setCurrentPage] = useState(0)
-    const [itemLimit, setItemLimit] = useState(3)
+    const [itemLimit, setItemLimit] = useState(1)
     const [pageCount, setPageCount] = useState(0)
     const artworkCards = useSelector((state) => state.artworkReducer.artworkCards)
     const totalItems = useSelector((state) => state.artworkReducer.totalItems)
@@ -27,7 +27,7 @@ const ArtworkList = () => {
 
     return (
         <div className='artworklist'>
-            <div className='pages'>
+            <div className='pages-controller'>
                 <Pagination pageCount={pageCount} handlePageChange={handlePageChange}/>
                 <div className='select-items-per-page'>
                     Items per page: 

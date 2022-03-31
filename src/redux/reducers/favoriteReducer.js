@@ -14,9 +14,10 @@ export const favoriteReducer = (state = initialState, { type, payload }) => {
                 favoriteCards: [...state.favoriteCards, payload.details]
             }
         case actionTypes.REMOVE_FAVORITE:
+            console.log(payload)
             return { 
                 ...state,
-                favoriteIds: state.favoriteIds.filter((fav) => fav.id !== payload.id),
+                favoriteIds: state.favoriteIds.filter((favid) => favid !== payload),
                 favoriteCards: state.favoriteCards.filter((fav) => fav.id !== payload)
             }
         default: 

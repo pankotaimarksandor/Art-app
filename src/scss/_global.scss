@@ -4,10 +4,7 @@
     padding: 0;
     margin: 0;
     font-family: $urbanist;
-}
-
-html {
-    height: 100%;
+    color: $font-primary;
 }
 
 a {
@@ -16,8 +13,13 @@ a {
 
 body {
     background: linear-gradient(to right bottom, $bg-linear-left 0%, $bg-linear-right 100%);
+    width: 100%;
+    min-height: 100vh;
 }
 
-.container {
-    margin: 0px 40px;
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 }

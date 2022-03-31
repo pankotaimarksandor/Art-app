@@ -4,24 +4,22 @@
     display: flex;
     justify-content: center;
     list-style: none;
-    padding: 15px;
+    padding: 15px 0;
 }
 
 .page-item {
-    transition: 0.3s;
-    &.active {
-        background-color: rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    
+    &.active .page-link {
+        color: $font-secondary;
     }
 
-    &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
+    &:hover .page-link {
+        color: $font-secondary;
     }
 }
 
 .page-link {
     cursor: pointer;
     padding: 15px;
-
-    
 }
-
