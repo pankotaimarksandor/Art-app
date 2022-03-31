@@ -19,7 +19,7 @@ const ArtworkDetails = () => {
         }
     }, [id, dispatch])
 
-    const handleImageSrc = (e) => {
+    const handleImageSrcOnError = (e) => {
         e.target.src = noImage
     }
 
@@ -45,7 +45,7 @@ const ArtworkDetails = () => {
                         </div>
                     </div>
                 <div className="section-right">
-                    <img src={artworkDetails.image} alt={artworkDetails.author} onError={handleImageSrc}/>
+                    <img src={artworkDetails.image} alt={artworkDetails.author} onError={handleImageSrcOnError}/>
                 </div>
               </>
             )}

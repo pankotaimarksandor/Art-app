@@ -42,8 +42,8 @@ const ArtworkList = () => {
             <div className='artwork-list'>
                 { artworkCards.length < 1 && <h2>Loading</h2> }
                 { artworkCards.length > 0 && (
-                    artworkCards.map((art, i) => (
-                        <ArtworkCard key={i} data={art}/>
+                    artworkCards.map((art) => (
+                        <ArtworkCard key={art.id} data={art}/>
                     ))
                 )}
             </div>
