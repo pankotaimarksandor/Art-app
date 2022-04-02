@@ -8,7 +8,9 @@ import './ArtworkDetails.scss'
 const ArtworkDetails = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
-    const artworkDetails = useSelector((state) => state.selectedArtworkReducer)
+    const artworkDetails = useSelector((state) => state.selectedArtworkReducer.artworkDetails)
+    const loading = useSelector((state) => state.selectedArtworkReducer.loading)
+    const error = useSelector((state) => state.selectedArtworkReducer.error)
 
     useEffect(() => {
         console.log(id)
@@ -25,8 +27,9 @@ const ArtworkDetails = () => {
 
     return (
         <div className='artworkdetails'>
-            {Object.keys(artworkDetails).length === 0 && <h2>Loading..</h2>}
-            {Object.keys(artworkDetails).length > 0 && (
+            {loading && <h2>Loading..</h2>}
+            {!loading && error && <h2>{error}</h2>}
+            {!loading && !error && Object.keys(artworkDetails).length > 0 && (
                 <>
                     <div className="section-left">
                         <div className="artwork-info">
@@ -49,6 +52,7 @@ const ArtworkDetails = () => {
                 </div>
               </>
             )}
+            { !loading && !error && Object.keys(artworkDetails).length < 1 && <h2>No details found</h2> }
         </div>
     )
 }
