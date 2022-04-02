@@ -8,9 +8,12 @@ export const fetchArtworksByPageAction = (page, limit) => (dispatch) => {
     artworkApi
         .get(`?page=${page}&limit=${limit}`)
         .then(response => {
+            
+            if(response.data === null || response.data.data === null) throw new Error(response)
+
             const artworkCards = []
 
-            response.data.data.map((artwork) => {
+            response.data.data.forEach(artwork => {
                 return artworkCards.push({
                     id: artwork.id, 
                     title: artwork.title,
@@ -24,7 +27,7 @@ export const fetchArtworksByPageAction = (page, limit) => (dispatch) => {
             })
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
             dispatch({
                 type: actionTypes.FETCH_ARTWORKS_BY_PAGE_FAIL,
                 payload: { error: 'Failed to get artworks' }
@@ -39,8 +42,11 @@ export const fetchSelectedArtworkAction = (id) => (dispatch) => {
     artworkApi
         .get(`/${id}`)
         .then(response => {
+
+            if(response.data === null || response.data.data === null) throw new Error(response)
+
             const artwork = response.data.data
-        
+    
             const artworkDetails = {
                 image: `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`,
                 title: artwork.title,
@@ -54,7 +60,7 @@ export const fetchSelectedArtworkAction = (id) => (dispatch) => {
             })
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
             dispatch({
                 type: actionTypes.FETCH_SELECTED_ARTWORK_FAIL,
                 payload: { error: 'Failed to get selected artwork' }

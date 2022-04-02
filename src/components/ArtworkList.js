@@ -59,7 +59,7 @@ const ArtworkList = () => {
                     </select>
                 </div>
             </div>
-            { isSearching && searchLoading && <h2>Loading..</h2> }
+            { isSearching && searchLoading && <h2>Searching..</h2> }
             { isSearching && !searchLoading && searchError && <h2>{searchError}</h2> }
             { isSearching && !searchLoading && !searchError && searchCards.length > 0 && (
                 <>

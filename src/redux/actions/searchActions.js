@@ -8,9 +8,12 @@ export const searchByQueryAction = (query) => (dispatch) => {
     artworkApi
         .get(`/search?q=${query}&fields=id,title,image_id`)
         .then(response => {
+
+            if(response.data === null || response.data.data === null) throw new Error(response)
+
             const searchCards = []
 
-            response.data.data.map((artwork) => {
+            response.data.data.forEach(artwork => {
                 return searchCards.push({
                     id: artwork.id, 
                     title: artwork.title,
@@ -24,7 +27,7 @@ export const searchByQueryAction = (query) => (dispatch) => {
             })
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
             dispatch({
                 type: actionTypes.SEARCH_BY_QUERY_FAIL,
                 payload: { error: 'No matches found with the given query'}
